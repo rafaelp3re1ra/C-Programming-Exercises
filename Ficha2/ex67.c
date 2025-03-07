@@ -46,5 +46,7 @@ int main()
 
     printPal(st1);
 
+    printf("\n");
+
     return 0;
 }

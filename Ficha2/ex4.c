@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 int unicos(int mat[][3], int nLin)
 {
     for (int i = 0; i < nLin; i++)
@@ -11,4 +13,18 @@ int unicos(int mat[][3], int nLin)
                     if (mat[i][j] == mat[k][l])
                         return 0;
         }
+    return 1;
+}
+
+int main()
+{
+    int mat1[][3] = {{1, 2, 3},
+                     {4, 5, 6}}; // Should return 1 (all unique)
+
+    int mat2[][3] = {{1, 2, 3},
+                     {4, 1, 6}}; // Should return 0 (1 appears twice)
+
+    printf("%d\n", unicos(mat1, 2));
+    printf("%d\n", unicos(mat2, 2));
+    return 0;
 }
