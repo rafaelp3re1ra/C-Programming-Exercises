@@ -38,13 +38,14 @@ void printPal(char s[])
 
 int main()
 {
-    char st1[15] = "Ola Mundo!";
+    char st1[20] = "     Ola Mundo  ! ";
 
-    printInv(st1);
+    //    printInv(st1);
 
     printf("\n\n");
 
     printPal(st1);
 
+    printf("\n");
     return 0;
 }
