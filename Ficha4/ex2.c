@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int media(int mat[][4], int linhas, int colunas, int *maxCol, int *minCol, double *maxMedia, double *minMedia)
+int media(int linhas, int colunas, int mat[][colunas], int *maxCol, int *minCol, double *maxMedia, double *minMedia)
 {
     double somas[colunas];
     double medias[colunas];
@@ -48,7 +48,7 @@ int main()
     int maxCol, minCol;
     double maxMedia, minMedia;
 
-    media(matriz, 3, 4, &maxCol, &minCol, &maxMedia, &minMedia);
+    media(3, 4, matriz, &maxCol, &minCol, &maxMedia, &minMedia);
 
     printf("\nResultados:\n");
     printf("Coluna com maior média: %d (média: %.2f)\n", maxCol, maxMedia);
