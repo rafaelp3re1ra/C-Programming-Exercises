@@ -27,6 +27,8 @@ int quadrante1(ret a[], int total);
 
 void eliminaMenor(ret a[], int *total);
 
+void inverte(ret a[], int total);
+
 void eliminaVarios(ret a[], int *total, int lim);
 
 #endif // P2324_AULA5_TABELA_H

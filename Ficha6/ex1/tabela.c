@@ -30,10 +30,10 @@ void printQuadrados(ret a[], int total)
     printf("\nRetângulos que são quadrados:\n");
     for (int i = 0; i < total; i++)
     {
-        if (a[i].alt == a[i].larg) // Verifica se o retângulo é um quadrado
+        if (a[i].alt == a[i].larg)
         {
             printf("\nR. %d", i);
-            printRet(a[i]); // Usa a função existente para imprimir os cantos
+            printRet(a[i]);
         }
     }
 }
@@ -84,13 +84,60 @@ void duplicaAltLarg(ret a[], int total)
 
 int quadrante1(ret a[], int total)
 {
-    return 0;
+    int aux = 0;
+    for (int i = 0; i < total; i++)
+    {
+        if (a[i].canto.x > 0 && a[i].canto.y > 0)
+            aux++;
+    }
+
+    return aux;
 }
 
 void eliminaMenor(ret a[], int *total)
 {
+    int menorInd = 0;
+    int menorArea = a[0].alt * a[0].larg;
+
+    for (int i = 0; i < *total; i++)
+    {
+        int aux = a[i].alt * a[i].larg;
+        if (aux < menorArea)
+        {
+            menorArea = aux;
+            menorInd = i;
+        }
+    }
+
+    for (int i = menorInd; i < *total - 1; i++)
+        a[i] = a[i + 1];
+
+    (*total)--;
+}
+
+void inverte(ret a[], int total)
+{
+    ret b[total];
+
+    for (int i = 0; i < total; i++)
+        b[total - (i + 1)] = a[i];
+
+    for (int i = 0; i < total; i++)
+        a[i] = b[i];
 }
 
 void eliminaVarios(ret a[], int *total, int lim)
 {
+    for (int i = 0; i < *total;)
+    {
+        if ((a[i].alt * a[i].larg) < lim)
+        {
+            for (int j = i; j < *total - 1; j++)
+                a[j] = a[j + 1];
+
+            (*total)--;
+        }
+        else
+            i++;
+    }
 }

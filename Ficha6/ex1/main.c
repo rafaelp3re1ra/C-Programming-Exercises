@@ -17,7 +17,13 @@ int main()
     duplicaAltLarg(tab, total);
     printV(tab, total);
 
-    // printf("Existem %d retangulos no quadrante 1\n", quadrante1(tab, total));
+    printf("Existem %d retangulos no quadrante 1\n", quadrante1(tab, total));
+
+    eliminaMenor(tab, &total);
+    printV(tab, total);
+
+    inverte(tab, total);
+    printV(tab, total);
 
     return 0;
 }
