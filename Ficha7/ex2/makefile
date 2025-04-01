@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-Wall -Wextra
 
-TARGET=ex1
+TARGET=ex2
 SRCS= main.c agenda.c
 OBJS=$(SRCS:.c=.o)
 
